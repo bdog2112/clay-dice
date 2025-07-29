@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/godot-reload-scene/reload_scene.gd" type="Script" id=1]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+anchor_right = 0.066
+anchor_bottom = 0.037
+margin_right = 24.28
+margin_bottom = 0.0400009
+script = ExtResource( 1 )
+
+[node name="VSeparator" type="VSeparator" parent="."]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="BtnReload" type="ToolButton" parent="."]
+margin_left = 8.0
+margin_right = 20.0
+margin_bottom = 40.0
+hint_tooltip = "Reload Scene"
+
+[node name="ChkReload" type="CheckBox" parent="."]
+visible = false
+margin_left = 24.0
+margin_right = 48.0
+margin_bottom = 40.0
+hint_tooltip = "Reload scene"
+pressed = true
+
+[node name="ChkSave" type="CheckBox" parent="."]
+margin_left = 24.0
+margin_right = 48.0
+margin_bottom = 40.0
+hint_tooltip = "Save before reload"
+
+[node name="OptChgScreen" type="OptionButton" parent="."]
+margin_left = 52.0
+margin_right = 112.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 60, 0 )
+hint_tooltip = "Switch to this screen"
+
+[connection signal="pressed" from="BtnReload" to="." method="_on_BtnReload_pressed"]
+[connection signal="pressed" from="OptChgScreen" to="." method="_on_OptChgScreen_pressed"]

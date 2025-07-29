@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://ciepm086b0gki"]
+
+[ext_resource type="Script" uid="uid://cwxwjkafeaa6f" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dikd3sxdw0eom" path="res://import/Clay Dice 01.gltf" id="2_0xm2m"]
+[ext_resource type="Material" uid="uid://v2avv0u6ce07" path="res://materials/base_color.tres" id="2_lquwl"]
+[ext_resource type="Material" uid="uid://2nvto1udva87" path="res://materials/wall_color.tres" id="3_7mycd"]
+[ext_resource type="Environment" uid="uid://c43bhxyvxqgno" path="res://materials/environment.tres" id="4_272bh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fl3ie"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0xm2m"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lquwl"]
+bounce = 0.02
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_ig7tw")
+
+[node name="MeshBase" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_fl3ie")
+surface_material_override/0 = ExtResource("2_lquwl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshBase"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshBase/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_0xm2m")
+
+[node name="MeshLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
+mesh = SubResource("BoxMesh_fl3ie")
+surface_material_override/0 = ExtResource("3_7mycd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshLeft"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshLeft/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_0xm2m")
+
+[node name="MeshRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)
+mesh = SubResource("BoxMesh_fl3ie")
+surface_material_override/0 = ExtResource("3_7mycd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshRight"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshRight/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_0xm2m")
+
+[node name="MeshBack" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.75)
+mesh = SubResource("BoxMesh_fl3ie")
+surface_material_override/0 = ExtResource("3_7mycd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshBack"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshBack/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_0xm2m")
+
+[node name="MeshFront" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.75)
+mesh = SubResource("BoxMesh_fl3ie")
+surface_material_override/0 = ExtResource("3_7mycd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshFront"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshFront/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_0xm2m")
+
+[node name="MeshTop" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshTop"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshTop/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_0xm2m")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.185, 0)
+fov = 35.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_272bh")
+
+[node name="Clay Dice 01" parent="." instance=ExtResource("2_0xm2m")]
+
+[node name="twenty-rigid" parent="Clay Dice 01" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_lquwl")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702013, 0)
+light_energy = 8.758
+light_specular = 0.662
+shadow_enabled = true
+shadow_blur = 4.838
+omni_range = 1.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -163.0
+offset_top = -23.0
+offset_right = 163.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Throw - Space   |   Reload - F5   |   Exit - Esc"
+
+[editable path="Clay Dice 01"]
