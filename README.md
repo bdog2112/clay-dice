@@ -11,6 +11,7 @@ FUTURE GOALS:
 - Enable player to create sets
 - Enable player to change color of dice
 - Create new and improved textures
+- Add sound effects
 - Decorate dice rolling area, perhaps, with Vegas-style markings
 
 OUT OF SCOPE:
