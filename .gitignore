@@ -1,3 +1,6 @@
+# General ignores
+misc/
+models/
 # Godot 4+ specific ignores
 .godot/
 .nomedia
