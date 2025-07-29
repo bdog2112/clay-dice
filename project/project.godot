@@ -41,6 +41,10 @@ reload={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+jolt_physics_3d/simulation/velocity_steps=12
+jolt_physics_3d/simulation/position_steps=4
+jolt_physics_3d/simulation/penetration_slop=0.005
+jolt_physics_3d/simulation/speculative_contact_distance=0.01
 
 [rendering]
 
