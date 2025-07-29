@@ -1,6 +1,13 @@
 # CLAY DICE
 extends Node3D
-@onready var twenty: RigidBody3D = $"Clay Dice 01/twenty-rigid"
+@onready var clay_dice_01: Node3D = $"Dice/Clay Dice 01"
+@onready var dice: Node3D = $Dice
+
+func _ready() -> void:
+	for i in range(3):
+		var new_die := clay_dice_01.duplicate(DUPLICATE_USE_INSTANTIATION)
+		dice.add_child(new_die)
+
 
 func _input(event: InputEvent) -> void:
 
@@ -21,10 +28,24 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("ui_accept"):
-		# Throw dice
-		print("%s throw dice" % Time.get_ticks_msec())
-		var x_offset = randi_range(-100, 100) * 0.1
-		var y_offset = randi_range(-100, 100) * 0.1
-		twenty.global_position = Vector3(0,.5, 0)
-		twenty.apply_impulse(Vector3(x_offset,-5, y_offset))
-		pass
+		for child in dice.get_children():
+			var die = child.get_children()[0]
+			throw_dice(die)
+
+
+## Throws a single die in a random direction with a random spin.
+func throw_dice(die):
+		var offset := 12.0
+		var spin := 10.0
+		var x_offset = randf_range(-offset, offset)
+		var z_offset = randf_range(-offset, offset)
+		var x_spin = randf_range(-spin, spin)
+		var y_spin = randf_range(-spin, spin)
+		var z_spin = randf_range(-spin, spin)
+		var speed := randf_range(-6, -4)
+		var dir := Vector3(x_offset, speed, z_offset)
+		var torque := Vector3(x_spin, y_spin, z_spin)
+		die.global_position = Vector3(0,.5, 0)
+		die.rotation = Vector3.ZERO
+		die.apply_impulse(dir)
+		die.apply_torque(torque)

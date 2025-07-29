@@ -12,6 +12,7 @@
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lquwl"]
+friction = 0.8
 bounce = 0.02
 
 [node name="Node3D" type="Node3D"]
@@ -82,17 +83,12 @@ fov = 35.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("4_272bh")
 
-[node name="Clay Dice 01" parent="." instance=ExtResource("2_0xm2m")]
-
-[node name="twenty-rigid" parent="Clay Dice 01" index="0"]
-physics_material_override = SubResource("PhysicsMaterial_lquwl")
-
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702013, 0)
 light_energy = 8.758
 light_specular = 0.662
 shadow_enabled = true
-shadow_blur = 4.838
+shadow_opacity = 0.99
 omni_range = 1.0
 
 [node name="Control" type="Control" parent="."]
@@ -115,6 +111,14 @@ offset_top = -23.0
 offset_right = 163.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Throw - Space   |   Reload - F5   |   Exit - Esc"
+text = "Throw - Space   |   Fullscreen - Tab   |   Reload - F5   |   Exit - Esc"
 
-[editable path="Clay Dice 01"]
+[node name="Dice" type="Node3D" parent="."]
+
+[node name="Clay Dice 01" parent="Dice" instance=ExtResource("2_0xm2m")]
+
+[node name="twenty-rigid" parent="Dice/Clay Dice 01" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_lquwl")
+gravity_scale = 0.9
+
+[editable path="Dice/Clay Dice 01"]
