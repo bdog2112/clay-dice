@@ -67,69 +67,69 @@
 	"images":[
 		{
 			"mimeType":"image/png",
-			"name":"Untitled",
-			"uri":"../textures/Untitled.png"
+			"name":"dice",
+			"uri":"../textures/dice.png"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":192,
+			"count":60,
 			"max":[
-				0.8464595675468445,
+				0.8506399989128113,
 				0.7946524620056152,
-				0.968397855758667
+				0.9822452068328857
 			],
 			"min":[
-				-0.8464595675468445,
+				-0.8506399989128113,
 				-0.7946524024009705,
-				-0.9683979749679565
+				-0.9822453260421753
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":192,
+			"count":60,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":192,
+			"count":60,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":780,
+			"count":60,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":2304,
+			"byteLength":720,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":2304,
-			"byteOffset":2304,
+			"byteLength":720,
+			"byteOffset":720,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1536,
-			"byteOffset":4608,
+			"byteLength":480,
+			"byteOffset":1440,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1560,
-			"byteOffset":6144,
+			"byteLength":120,
+			"byteOffset":1920,
 			"target":34963
 		}
 	],
@@ -141,7 +141,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":7704,
+			"byteLength":2040,
 			"uri":"Clay%20Dice%2001.bin"
 		}
 	]

@@ -1,26 +1,32 @@
-[gd_scene load_steps=9 format=3 uid="uid://ciepm086b0gki"]
+[gd_scene load_steps=12 format=3 uid="uid://ciepm086b0gki"]
 
 [ext_resource type="Script" uid="uid://cwxwjkafeaa6f" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dikd3sxdw0eom" path="res://import/Clay Dice 01.gltf" id="2_0xm2m"]
 [ext_resource type="Material" uid="uid://v2avv0u6ce07" path="res://materials/base_color.tres" id="2_lquwl"]
 [ext_resource type="Material" uid="uid://2nvto1udva87" path="res://materials/wall_color.tres" id="3_7mycd"]
 [ext_resource type="Environment" uid="uid://c43bhxyvxqgno" path="res://materials/environment.tres" id="4_272bh"]
+[ext_resource type="PhysicsMaterial" uid="uid://6856xsk5b8ay" path="res://materials/dice_physics_material.tres" id="6_7mycd"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_fl3ie"]
+[sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0xm2m"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lquwl"]
-friction = 0.8
-bounce = 0.02
+[sub_resource type="BoxMesh" id="BoxMesh_7mycd"]
+size = Vector3(1, 1.5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_272bh"]
+size = Vector3(1, 1.5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fl3ie"]
+size = Vector3(1, 1.5, 1)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ig7tw")
 
 [node name="MeshBase" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-mesh = SubResource("BoxMesh_fl3ie")
+mesh = SubResource("BoxMesh_lquwl")
 surface_material_override/0 = ExtResource("2_lquwl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshBase"]
@@ -30,7 +36,7 @@ shape = SubResource("ConvexPolygonShape3D_0xm2m")
 
 [node name="MeshLeft" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
-mesh = SubResource("BoxMesh_fl3ie")
+mesh = SubResource("BoxMesh_7mycd")
 surface_material_override/0 = ExtResource("3_7mycd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshLeft"]
@@ -40,7 +46,7 @@ shape = SubResource("ConvexPolygonShape3D_0xm2m")
 
 [node name="MeshRight" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)
-mesh = SubResource("BoxMesh_fl3ie")
+mesh = SubResource("BoxMesh_272bh")
 surface_material_override/0 = ExtResource("3_7mycd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshRight"]
@@ -77,8 +83,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("ConvexPolygonShape3D_0xm2m")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.185, 0)
-fov = 35.0
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.495, 0)
+fov = 24.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("4_272bh")
@@ -99,7 +105,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Results" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_right = 28.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Results:"
+
+[node name="Hotkeys" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -113,12 +130,16 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Throw - Space   |   Fullscreen - Tab   |   Reload - F5   |   Exit - Esc"
 
+[node name="Clay Dice 01" parent="Control" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37, 0, 0)
+visible = false
+
 [node name="Dice" type="Node3D" parent="."]
 
 [node name="Clay Dice 01" parent="Dice" instance=ExtResource("2_0xm2m")]
 
 [node name="twenty-rigid" parent="Dice/Clay Dice 01" index="0"]
-physics_material_override = SubResource("PhysicsMaterial_lquwl")
+physics_material_override = ExtResource("6_7mycd")
 gravity_scale = 0.9
 
 [editable path="Dice/Clay Dice 01"]
