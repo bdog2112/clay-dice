@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dl2lavulq7sxx"
-path="res://.godot/imported/d6.gltf-2637d9248ec2d4544ad7f6faef0b9747.scn"
+uid="uid://vuw0418g4atf"
+path="res://.godot/imported/d4.gltf-16e39162c7c268a6c5dc21dac4174200.scn"
 
 [deps]
 
-source_file="res://import/d6.gltf"
-dest_files=["res://.godot/imported/d6.gltf-2637d9248ec2d4544ad7f6faef0b9747.scn"]
+source_file="res://import/d4.gltf"
+dest_files=["res://.godot/imported/d4.gltf-16e39162c7c268a6c5dc21dac4174200.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=0.06
+nodes/root_scale=0.08
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
@@ -34,9 +34,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"mtl_d6": {
+"mtl_d4": {
 "use_external/enabled": true,
-"use_external/path": "res://materials/mtl_d6.tres"
+"use_external/path": "res://materials/mtl_d4.tres"
 }
 }
 }

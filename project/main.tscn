@@ -138,10 +138,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Throw - Space   |   Fullscreen - Tab   |   Reload - F5   |   Exit - Esc"
 
-[node name="D20" parent="Control" instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37, 0, 0)
-visible = false
-
 [node name="Clay Dice 01" parent="." instance=ExtResource("2_0xm2m")]
 visible = false
 

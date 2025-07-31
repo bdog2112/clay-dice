@@ -12,8 +12,10 @@ enum DIE_TYPE {
 const DICE_TIMER_DURATION := 1.75
 const D20_VALUES: Dictionary = {0:2, 1:20, 2:12, 3:10, 4:8, 5:14, 6:18, 7:15,
 	8:17, 9:16, 10:4, 11:5, 12:7, 13:3, 14:6, 15:11, 16:13, 17:1, 18:19, 19:9}
+const D4_VALUES: Dictionary = {2:1, 0:2, 3:3, 1:4}
 const D6_VALUES: Dictionary = {0:4, 2:2, 4:3, 6:5, 8:6, 10:1}
 const DICE_PHYSICS_MATERIAL: PhysicsMaterial = preload("res://materials/dice_physics_material.tres")
+const D4: PackedScene = preload("res://scenes/dice/d4.tscn")
 const D6: PackedScene = preload("res://scenes/dice/d6.tscn")
 const D20: PackedScene = preload("res://scenes/dice/d20.tscn")
 @export var number_of_dice := 3
@@ -125,7 +127,6 @@ func remove_die():
 ## Changes type of die based on an enum
 func change_dice(die_type: DIE_TYPE, purge_dice: bool = false):
 	# Bail if die type is already active
-	print("current_die_type %s, die_type %s" % [current_die_type, die_type])
 	if current_die_type == die_type and not purge_dice:
 		return
 	current_die_type = die_type
@@ -136,6 +137,9 @@ func change_dice(die_type: DIE_TYPE, purge_dice: bool = false):
 	# Determine new die type
 	var die_scene: Node3D
 	match die_type:
+		DIE_TYPE.D4:
+			die_scene = D4.instantiate()
+			dice_values = D4_VALUES
 		DIE_TYPE.D6:
 			die_scene = D6.instantiate()
 			dice_values = D6_VALUES
@@ -204,7 +208,10 @@ func get_die_value(meshi: MeshInstance3D)->int:
 		# Transform normal to world space to account for rotation
 		var world_normal = meshi.global_transform.basis * normal
 		# Calculate dot product with global up vector
-		var dot = world_normal.dot(Vector3.UP)
+		var up_dir := Vector3.UP
+		if current_die_type in [DIE_TYPE.D4]:
+			up_dir = Vector3.DOWN
+		var dot = world_normal.dot(up_dir)
 
 		# Update if this face is more upward-facing
 		if dot > max_dot:
@@ -213,8 +220,6 @@ func get_die_value(meshi: MeshInstance3D)->int:
 			top_i = i
 	var face_value: int = dice_values[top_face_index]
 	return face_value
-	#print("indices size %s" % indices.size())
-	#print("top_face_index %s, max_dot %s, top_i %s" % [top_face_index, max_dot, top_i])
 	#print("top_face_index %s" % [top_face_index])
 	#return top_face_index
 
@@ -233,7 +238,7 @@ func roll_single_die(die: RigidBody3D):
 		var x_offset = randf_range(-offset, offset)
 		var z_offset = randf_range(-offset, offset)
 		var x_spin = randf_range(spin.x, spin.y) * [-1, 1].pick_random()
-		var y_spin = randf_range(spin.x, spin.y) * [-1, 1].pick_random()
+		var y_spin = randf_range(spin.x, spin.y) * [-1, 1].pick_random() * 0.1
 		var z_spin = randf_range(spin.x, spin.y) * [-1, 1].pick_random()
 		var speed := randf_range(-6, -4)
 		var dir := Vector3(x_offset, speed, z_offset)

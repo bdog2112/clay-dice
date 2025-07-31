@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://beeaghshkhmmh"]
+
+[ext_resource type="Texture2D" uid="uid://bc7ef134fwr4r" path="res://textures/tx_d4.png" id="1_amh2n"]
+
+[resource]
+resource_name = "mtl_d4"
+cull_mode = 2
+albedo_texture = ExtResource("1_amh2n")
+metallic_specular = 0.1
+roughness = 0.02
