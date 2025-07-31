@@ -102,6 +102,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702, 0)
 light_energy = 8.758
 light_specular = 0.662
 shadow_enabled = true
+shadow_bias = 0.0
 shadow_opacity = 0.99
 omni_range = 1.0
 
