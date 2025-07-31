@@ -24,7 +24,6 @@ size = Vector3(1, 1.5, 1)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ig7tw")
-number_of_dice = 1
 current_die_type = 1
 
 [node name="MeshBase" type="MeshInstance3D" parent="."]

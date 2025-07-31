@@ -227,7 +227,7 @@ func roll_dice():
 
 
 ## Rolls a single die in a random direction with a random spin.
-func roll_single_die(die):
+func roll_single_die(die: RigidBody3D):
 		var offset := 12.0
 		var spin: Vector2 = Vector2(100, 200)
 		var x_offset = randf_range(-offset, offset)
@@ -241,7 +241,7 @@ func roll_single_die(die):
 		die.global_position = Vector3(0,.5, 0)
 		die.rotation = Vector3.ZERO
 		die.apply_impulse(dir)
-		die.apply_torque(torque)
+		die.apply_torque_impulse(torque)
 		start_dice_timer()
 
 
