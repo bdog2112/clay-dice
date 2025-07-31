@@ -15,24 +15,18 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"twenty-rigid",
-			"rotation":[
-				-1,
-				0,
-				0,
-				1.6292068494294654e-07
-			],
+			"name":"d6-rigid",
 			"translation":[
 				0,
-				0.7946524024009705,
-				-6.506196768896189e-06
+				0.8213587999343872,
+				0
 			]
 		}
 	],
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"Material",
+			"name":"mtl_d6",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
@@ -44,7 +38,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Icosphere",
+			"name":"Cube",
 			"primitives":[
 				{
 					"attributes":{
@@ -67,69 +61,69 @@
 	"images":[
 		{
 			"mimeType":"image/png",
-			"name":"dice",
-			"uri":"../textures/dice.png"
+			"name":"tx_d6",
+			"uri":"../textures/tx_d6.png"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":60,
+			"count":24,
 			"max":[
-				0.8506399989128113,
-				0.7946524620056152,
-				0.9822452068328857
+				0.8213587999343872,
+				0.8213590383529663,
+				0.8213590383529663
 			],
 			"min":[
-				-0.8506399989128113,
-				-0.7946524024009705,
-				-0.9822453260421753
+				-0.8213587999343872,
+				-0.8213590383529663,
+				-0.8213590383529663
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":60,
+			"count":24,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":60,
+			"count":24,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":60,
+			"count":36,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":720,
+			"byteLength":288,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":720,
-			"byteOffset":720,
+			"byteLength":288,
+			"byteOffset":288,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":480,
-			"byteOffset":1440,
+			"byteLength":192,
+			"byteOffset":576,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":120,
-			"byteOffset":1920,
+			"byteLength":72,
+			"byteOffset":768,
 			"target":34963
 		}
 	],
@@ -141,8 +135,8 @@
 	],
 	"buffers":[
 		{
-			"byteLength":2040,
-			"uri":"Clay%20Dice%2001.bin"
+			"byteLength":840,
+			"uri":"d6.bin"
 		}
 	]
 }

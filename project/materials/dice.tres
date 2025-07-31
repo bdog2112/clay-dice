@@ -7,4 +7,4 @@ resource_name = "Material"
 cull_mode = 2
 albedo_texture = ExtResource("1_a84p0")
 metallic_specular = 0.24
-roughness = 0.71
+roughness = 0.02

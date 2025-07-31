@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b75iuiu0m6yyk"]
+
+[ext_resource type="PackedScene" uid="uid://dikd3sxdw0eom" path="res://import/d20.gltf" id="1_jwajd"]
+
+[node name="d20" instance=ExtResource("1_jwajd")]
