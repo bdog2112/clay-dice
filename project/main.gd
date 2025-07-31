@@ -159,7 +159,7 @@ func change_dice(die_type: DIE_TYPE, purge_dice: bool = false):
 	#main_die_rigid.inertia = Vector3(0.83, 0.83, 0.83)
 	#main_die_rigid.angular_damp = 0.1
 	#main_die_rigid.linear_damp = 0.05
-	main_die_rigid.mass = 2.0
+	main_die_rigid.mass = 6.0
 
 	# Add remaining dice
 	var num_dice_to_add := number_of_dice - dice.get_child_count()
