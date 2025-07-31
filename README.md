@@ -1,13 +1,16 @@
 # CLAY DICE
 Sometimes you just gotta roll the dice and let the chips fall where they may.
 
-This is a dice rolling project that, in its current form, allows you to roll 4 twenty sided dice. They launch with satisfying speed and settle quickly. But, not before bouncing wildly off the walls!
+This is a dice rolling project that, in its current form, allows you to roll 6 and 20-sided dice. They launch with satisfying speed and settle quickly. But, not before bouncing wildly off the walls!
 
 <img src="./images/clay_dice.png">
 
+Add/remove dice with "+/-". Up to 8 dice can be added! Change die-type with "6" for 6-sided and "3" for 20-sided.
+
+If dice land on top of each other, then the top one is automatically re-rolled after a brief settling period. A numeric result is also displayed at the top of the screen.
+
 FUTURE GOALS:
-- Add hotkeys to add/remove dice: + add, - remove
-- Add 4, 6, 8, 10 and 12-sided dice
+- Add 4, 8, 10 and 12-sided dice
 - Add hotkeys to change die-type
   - 1 for 10-sided
   - 2 for 12-sided
@@ -15,12 +18,11 @@ FUTURE GOALS:
   - 4 for 4-sided
   - 6 for 6-sided
   - 8 for 8-sided
-- Add logic to un-stack dice when they land on one another
-- Display numeric result of dice roll
 - Enable player to change color of dice
-- Enable toggle of "always on top"
+- Enable toggle of " window always on top"
 - Add ability to save settings
 - Create new and improved textures
+- Improve environment
 
 STRETCH GOALS:
 - Add sound effects
@@ -33,6 +35,9 @@ COMPLETED:
 - Added fullscreen toggle
 - Increased physics iterations and precision
 - Enabled rolling multiple dice
+- Added 6-sided die
+- Enabled adding/removing dice
+- Enabled switching between die types
 
 OUT OF SCOPE:
 - TBD
