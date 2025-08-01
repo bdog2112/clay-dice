@@ -18,6 +18,8 @@ FUTURE GOALS:
   - 4 for 4-sided
   - 6 for 6-sided
   - 8 for 8-sided
+
+STRETCH GOALS:
 - Enable player to change color of dice
 - Enable toggle of " window always on top"
 - Enable adjustment of "dice settling time"
@@ -25,8 +27,7 @@ FUTURE GOALS:
 - Save window position/state
 - Create new and improved textures
 - Further develop motif and environment
-
-STRETCH GOALS:
+- Enable player to click a die to re-roll it
 - Add sound effects
 - Decorate dice rolling area, perhaps, with Vegas-style markings
 - Highlight mesh faces that represent each die result
