@@ -10,7 +10,7 @@ enum DIE_TYPE {
 	D12,
 	D20,
 }
-const DICE_TIMER_DURATION := 1.75
+const DICE_TIMER_DURATION := 0.75 # 1.75
 #const D4_VALUES: Dictionary = {2:1, 0:2, 3:3, 1:4} # non-beveled
 const D4_VALUES: Dictionary = {2:1, 1:2, 0:3, 91:4} # beveled
 #const D6_VALUES: Dictionary = {0:4, 2:2, 4:3, 6:5, 8:6, 10:1} # non-beveled
