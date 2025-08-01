@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcoddc2sgpwai"]
+
+[ext_resource type="PackedScene" uid="uid://bm42rslojl3py" path="res://import/d8.gltf" id="1_v3a6d"]
+
+[node name="d8" instance=ExtResource("1_v3a6d")]

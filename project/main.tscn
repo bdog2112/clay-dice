@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ciepm086b0gki"]
+[gd_scene load_steps=15 format=3 uid="uid://ciepm086b0gki"]
 
 [ext_resource type="Script" uid="uid://cwxwjkafeaa6f" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dikd3sxdw0eom" path="res://import/d20.gltf" id="2_0xm2m"]
@@ -8,6 +8,7 @@
 [ext_resource type="Environment" uid="uid://c43bhxyvxqgno" path="res://materials/environment.tres" id="4_272bh"]
 [ext_resource type="PackedScene" uid="uid://dl2lavulq7sxx" path="res://import/d6.gltf" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://ddecoi0jfgkn7" path="res://scenes/dice/d4.tscn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://bcoddc2sgpwai" path="res://scenes/dice/d8.tscn" id="9_kek77"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
 
@@ -151,12 +152,13 @@ visible = false
 [node name="Dice" type="Node3D" parent="."]
 
 [node name="d4" parent="Dice" instance=ExtResource("8_5vw27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 
 [node name="d6" parent="Dice" instance=ExtResource("7_272bh")]
-visible = false
 
 [node name="d20" parent="Dice" instance=ExtResource("2_0xm2m")]
+
+[node name="d8" parent="Dice" instance=ExtResource("9_kek77")]
+visible = false
 
 [editable path="Clay Dice 01"]
