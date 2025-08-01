@@ -220,8 +220,8 @@ func get_die_value(meshi: MeshInstance3D)->int:
 			up_dir = Vector3.DOWN
 		var dot = world_normal.dot(up_dir)
 
-		# Update if this face is more upward-facing.
-		# Ignore beveled and duplicate faces.
+		# Update max_dot if this face is more upward-facing. Ignore beveled and
+		# duplicate faces. i.e. Every die face has 2 tris. Ignore the 2nd tri.
 		if dot > max_dot and face_index in dice_values:
 			max_dot = dot
 			top_face_index = face_index
