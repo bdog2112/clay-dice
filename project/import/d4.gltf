@@ -15,7 +15,7 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"d4-rigid",
+			"name":"d4-bev-rigid",
 			"translation":[
 				0,
 				0.3535533845424652,
@@ -38,7 +38,7 @@
 	],
 	"meshes":[
 		{
-			"name":"mesh_d4",
+			"name":"mesh_d4.001",
 			"primitives":[
 				{
 					"attributes":{
@@ -69,61 +69,61 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":12,
+			"count":84,
 			"max":[
-				0.8660253882408142,
-				1.0606601238250732,
-				0.5
+				0.8362669348716736,
+				1.0198423862457275,
+				0.4904221296310425
 			],
 			"min":[
-				-0.8660253882408142,
+				-0.8362669348716736,
 				-0.3535533845424652,
-				-1
+				-0.9625470042228699
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":12,
+			"count":84,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":12,
+			"count":84,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":12,
+			"count":276,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":144,
+			"byteLength":1008,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":144,
-			"byteOffset":144,
+			"byteLength":1008,
+			"byteOffset":1008,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":96,
-			"byteOffset":288,
+			"byteLength":672,
+			"byteOffset":2016,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":24,
-			"byteOffset":384,
+			"byteLength":552,
+			"byteOffset":2688,
 			"target":34963
 		}
 	],
@@ -135,7 +135,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":408,
+			"byteLength":3240,
 			"uri":"d4.bin"
 		}
 	]

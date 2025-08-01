@@ -15,7 +15,7 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"d6-rigid",
+			"name":"d6-bev-rigid",
 			"translation":[
 				0,
 				0.8213587999343872,
@@ -38,7 +38,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube",
+			"name":"Cube.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -61,15 +61,15 @@
 	"images":[
 		{
 			"mimeType":"image/png",
-			"name":"tx_d6",
-			"uri":"../textures/tx_d6.png"
+			"name":"tx_d6_l",
+			"uri":"../textures/tx_d6_l.png"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":24,
+			"count":152,
 			"max":[
 				0.8213587999343872,
 				0.8213590383529663,
@@ -85,45 +85,45 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":24,
+			"count":152,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":24,
+			"count":152,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":36,
+			"count":564,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":288,
+			"byteLength":1824,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":288,
-			"byteOffset":288,
+			"byteLength":1824,
+			"byteOffset":1824,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":192,
-			"byteOffset":576,
+			"byteLength":1216,
+			"byteOffset":3648,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":72,
-			"byteOffset":768,
+			"byteLength":1128,
+			"byteOffset":4864,
 			"target":34963
 		}
 	],
@@ -135,7 +135,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":840,
+			"byteLength":5992,
 			"uri":"d6.bin"
 		}
 	]

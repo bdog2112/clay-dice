@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ciepm086b0gki"]
+[gd_scene load_steps=14 format=3 uid="uid://ciepm086b0gki"]
 
 [ext_resource type="Script" uid="uid://cwxwjkafeaa6f" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dikd3sxdw0eom" path="res://import/d20.gltf" id="2_0xm2m"]
@@ -7,6 +7,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://6856xsk5b8ay" path="res://materials/dice_physics_material.tres" id="3_272bh"]
 [ext_resource type="Environment" uid="uid://c43bhxyvxqgno" path="res://materials/environment.tres" id="4_272bh"]
 [ext_resource type="PackedScene" uid="uid://dl2lavulq7sxx" path="res://import/d6.gltf" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://ddecoi0jfgkn7" path="res://scenes/dice/d4.tscn" id="8_5vw27"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
 
@@ -24,7 +25,6 @@ size = Vector3(1, 1.5, 1)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ig7tw")
-current_die_type = 1
 
 [node name="MeshBase" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -97,13 +97,19 @@ fov = 24.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("4_272bh")
 
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00155067, 0.369839, 0)
+size = Vector3(1.08945, 0.764145, 20)
+box_projection = true
+enable_shadows = true
+
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702, 0)
 light_energy = 8.758
 light_specular = 0.662
 shadow_enabled = true
-shadow_bias = 0.0
-shadow_opacity = 0.99
+shadow_bias = 0.001
+shadow_opacity = 0.6
 omni_range = 1.0
 
 [node name="Control" type="Control" parent="."]
@@ -144,6 +150,13 @@ visible = false
 
 [node name="Dice" type="Node3D" parent="."]
 
+[node name="d4" parent="Dice" instance=ExtResource("8_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+
 [node name="d6" parent="Dice" instance=ExtResource("7_272bh")]
+visible = false
+
+[node name="d20" parent="Dice" instance=ExtResource("2_0xm2m")]
 
 [editable path="Clay Dice 01"]

@@ -15,7 +15,7 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"d20-rigid",
+			"name":"d20-bev-rigid",
 			"rotation":[
 				-1,
 				0,
@@ -32,7 +32,7 @@
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"Material",
+			"name":"mtl_d20",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
@@ -44,7 +44,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Icosphere",
+			"name":"Icosphere.001",
 			"primitives":[
 				{
 					"attributes":{
@@ -67,69 +67,69 @@
 	"images":[
 		{
 			"mimeType":"image/png",
-			"name":"dice",
-			"uri":"../textures/dice.png"
+			"name":"tx_d20_nl",
+			"uri":"../textures/tx_d20_nl.png"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":60,
+			"count":382,
 			"max":[
-				0.8506399989128113,
+				0.8459409475326538,
 				0.7946524620056152,
-				0.9822452068328857
+				0.9674469232559204
 			],
 			"min":[
-				-0.8506399989128113,
+				-0.8459409475326538,
 				-0.7946524024009705,
-				-0.9822453260421753
+				-0.9674471616744995
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":60,
+			"count":382,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":60,
+			"count":382,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":60,
+			"count":1428,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":720,
+			"byteLength":4584,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":720,
-			"byteOffset":720,
+			"byteLength":4584,
+			"byteOffset":4584,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":480,
-			"byteOffset":1440,
+			"byteLength":3056,
+			"byteOffset":9168,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":120,
-			"byteOffset":1920,
+			"byteLength":2856,
+			"byteOffset":12224,
 			"target":34963
 		}
 	],
@@ -141,7 +141,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":2040,
+			"byteLength":15080,
 			"uri":"d20.bin"
 		}
 	]
