@@ -18,6 +18,7 @@ FUTURE GOALS:
   - 4 for 4-sided
   - 6 for 6-sided
   - 8 for 8-sided
+- Add hotkey to re-check results
 
 STRETCH GOALS:
 - Enable player to change color of dice
