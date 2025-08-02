@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ciepm086b0gki"]
+[gd_scene load_steps=17 format=3 uid="uid://ciepm086b0gki"]
 
 [ext_resource type="Script" uid="uid://cwxwjkafeaa6f" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dikd3sxdw0eom" path="res://import/d20.gltf" id="2_0xm2m"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ddecoi0jfgkn7" path="res://scenes/dice/d4.tscn" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bcoddc2sgpwai" path="res://scenes/dice/d8.tscn" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://dstj66nh6bmdh" path="res://import/d12.gltf" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://bqunlo7jpsawg" path="res://scenes/dice/d10.tscn" id="10_efxa6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
 
@@ -159,6 +160,9 @@ visible = false
 visible = false
 
 [node name="d8" parent="Dice" instance=ExtResource("9_kek77")]
+visible = false
+
+[node name="d10" parent="Dice" instance=ExtResource("10_efxa6")]
 visible = false
 
 [node name="d12" parent="Dice" instance=ExtResource("10_4c57u")]

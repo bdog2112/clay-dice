@@ -16,6 +16,8 @@ const D4_VALUES: Dictionary = {2:1, 1:2, 0:3, 91:4} # beveled
 #const D6_VALUES: Dictionary = {0:4, 2:2, 4:3, 6:5, 8:6, 10:1} # non-beveled
 const D6_VALUES: Dictionary = {4:1, 8:2, 2:3, 6:4, 0:5, 186:6} # beveled
 const D8_VALUES: Dictionary = {5:1, 0:2, 3:3, 187:4, 2:5, 6:6, 1:7, 4:8} # beveled
+#const D10_VALUES: Dictionary = {0:1, 18:2, 6:3, 12:4, 8:5, 10:6, 4:7, 16:8, 2:9, 14:0} # non-beveled
+const D10_VALUES: Dictionary = {4:1, 18:2, 2:3, 10:4, 6:5, 8:6, 16:7, 14:8, 0:9, 12:10}
 const D12_VALUES: Dictionary = {3:1, 27:2, 0:3, 12:4, 30:5, 33:6, 24:7, 21:8, 15:9, 6:10, 18:11, 9:12} # beveled
 #const D20_VALUES: Dictionary = {0:2, 1:20, 2:12, 3:10, 4:8, 5:14, 6:18, 7:15,
 	#8:17, 9:16, 10:4, 11:5, 12:7, 13:3, 14:6, 15:11, 16:13, 17:1, 18:19, 19:9} # non-beveled
@@ -27,6 +29,7 @@ const D4: PackedScene = preload("res://scenes/dice/d4.tscn")
 const D6: PackedScene = preload("res://scenes/dice/d6.tscn")
 const D8: PackedScene = preload("res://scenes/dice/d8.tscn")
 const D12: PackedScene = preload("res://scenes/dice/d12.tscn")
+const D10: PackedScene = preload("res://scenes/dice/d10.tscn")
 const D20: PackedScene = preload("res://scenes/dice/d20.tscn")
 @export var number_of_dice := 3
 @export var current_die_type := DIE_TYPE.D20
@@ -157,10 +160,13 @@ func change_dice(die_type: DIE_TYPE, purge_dice: bool = false):
 		DIE_TYPE.D8:
 			die_scene = D8.instantiate()
 			dice_values = D8_VALUES
+		DIE_TYPE.D10:
+			die_scene = D10.instantiate()
+			dice_values = D10_VALUES
+			#dice_values = GENERIC_VALUES
 		DIE_TYPE.D12:
 			die_scene = D12.instantiate()
 			dice_values = D12_VALUES
-			#dice_values = GENERIC_VALUES
 		DIE_TYPE.D20:
 			die_scene = D20.instantiate()
 			dice_values = D20_VALUES
